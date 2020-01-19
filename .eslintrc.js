@@ -13,7 +13,9 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     "max-len": "off",
     "quotes": "off",
-    "class-methods-use-this": "off"
+    "class-methods-use-this": "off",
+    "object-curly-newline": "off",
+    "import/prefer-default-export":"off",
   },
   parserOptions: {
     parser: '@typescript-eslint/parser',

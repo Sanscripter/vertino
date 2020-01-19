@@ -5,14 +5,22 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 // @ is an alias to /src
+import { Component, Prop, Vue } from "vue-property-decorator";
+import firebaseApp from "../firebaseApp";
 import HelloWorld from '@/components/HelloWorld.vue';
 
-export default {
-  name: 'home',
+@Component({
   components: {
     HelloWorld,
   },
-};
+})
+export default class Dashboard extends Vue {
+  mounted() {
+    if (firebaseApp.auth().currentUser!.email) {
+      console.log(firebaseApp.auth().currentUser!.email);
+    }
+  }
+}
 </script>

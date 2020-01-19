@@ -1,17 +1,22 @@
 <template>
   <div class="register h-window">
-    <AccountForm intent="Login"></AccountForm>
+    <AccountForm :intent="formIntent"></AccountForm>
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 import AccountForm from "@/components/AccountForm.vue";
+import { AccountFormIntents } from "../enums/AccountFormIntents.enum";
+
 
 @Component({
   components: {
     AccountForm,
   },
 })
-export default class Login extends Vue {}
+export default class Login extends Vue {
+  private formIntent = AccountFormIntents.LOGIN;
+}
+
 </script>
