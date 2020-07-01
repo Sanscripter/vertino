@@ -8,6 +8,7 @@ import App from './App.vue';
 import './registerServiceWorker';
 import router from './router';
 import store from './store';
+import ArgonDashboard from './plugins/argon-dashboard'
 
 
 Vue.config.productionTip = false;
@@ -15,6 +16,7 @@ Vue.config.productionTip = false;
 Vue.use(VueI18n);
 Vue.use(VueFire.firestorePlugin);
 Vue.use(VueMaterial);
+Vue.use(ArgonDashboard);
 
 new Vue({
   router,
